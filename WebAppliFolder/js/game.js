@@ -9,7 +9,7 @@ function gameLoop(){
 
     ctx.fillStyle = 'red';
     ctx.fillRect(x, 10, 100, 100);
-    x += 0.5
+    x += 2
 
 }
 
