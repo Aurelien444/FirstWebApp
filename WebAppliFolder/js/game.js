@@ -1,6 +1,9 @@
 const canvas = document.getElementById("canvasTest");
 const ctx = canvas.getContext('2d');
 
+canvas.width = document.documentElement.clientWidth || document.body.clientWidth;
+canvas.height = document.documentElement.clientHeight || document.body.clientHeight;
+
 let x = 0
 let y = 0
 
