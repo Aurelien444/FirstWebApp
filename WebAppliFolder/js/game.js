@@ -4,8 +4,8 @@ const ctx = canvas.getContext('2d');
 let x = 0
 let y = 0
 
-xMovement = 2;
-yMovement = 2;
+let xMovement = 2;
+let yMovement = 2;
 
 const Cube_Size_x = 100;
 const Cube_Size_y = 100;
@@ -22,7 +22,7 @@ function gameLoop(){
     if(x+Cube_Size_x+xMovement >= canvas.width || x+xMovement <= 0){
         xMovement *= -1;
     }
-    if(y+Cube_Size_y+yMovement >= canvas.width || y+yMovement <= 0){
+    if(y+Cube_Size_y+yMovement >= canvas.height || y+yMovement <= 0){
         yMovement *= -1;
     }
 
