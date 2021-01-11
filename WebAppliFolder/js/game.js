@@ -1,16 +1,35 @@
 const canvas = document.getElementById("canvasTest");
 const ctx = canvas.getContext('2d');
 
-let x = 10
+let x = 0
+let y = 0
+
+xMovement = 2;
+yMovement = 2;
+
+const Cube_Size_x = 100;
+const Cube_Size_y = 100;
+
+var img = new Image();
+img.src = 'imageFolder/Bruto.png'
 
 function gameLoop(){
     ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, 300, 300);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = 'red';
-    ctx.fillRect(x, 10, 100, 100);
-    x += 2
+    ctx.drawImage(img, x, y, Cube_Size_x, Cube_Size_y);
+
+    if(x+Cube_Size_x+xMovement >= canvas.width || x+xMovement <= 0){
+        xMovement *= -1;
+    }
+    if(y+Cube_Size_y+yMovement >= canvas.width || y+yMovement <= 0){
+        yMovement *= -1;
+    }
+
+x+=xMovement;
+y+=yMovement;
 
 }
-
-setInterval(gameLoop, 1000 / 60)
+img.onload = function(){
+    setInterval(gameLoop, 1000 / 60)
+}
